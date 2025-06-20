@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "author": "FIAP Agricultural Project",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp32", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht22",
+      "top": -124.5,
+      "left": 23.4,
+      "attrs": { "temperature": "25", "humidity": "30" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_p",
+      "top": 227,
+      "left": 38.4,
+      "attrs": { "color": "blue", "label": "P (Fósforo)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_k",
+      "top": 303.8,
+      "left": 38.4,
+      "attrs": { "color": "green", "label": "K (Potássio)" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr",
+      "top": 176,
+      "left": 202.4,
+      "attrs": { "value": "50", "label": "pH Sensor" }
+    },
+    { "type": "wokwi-relay", "id": "relay", "top": 110, "left": 290, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": 102,
+      "left": 167,
+      "attrs": { "color": "blue", "label": "Irrigação" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -41.6,
+      "left": 197.6,
+      "attrs": { "pins": "i2c", "color": "blue" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 167.15,
+      "left": 124.8,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp32:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp32:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp32:D14", "dht22:SDA", "green", [] ],
+    [ "esp32:3V3", "dht22:VCC", "red", [] ],
+    [ "esp32:GND.1", "dht22:GND", "black", [] ],
+    [ "esp32:D12", "btn_p:1.l", "blue", [ "v0" ] ],
+    [ "btn_p:2.r", "esp32:3V3", "red", [ "v0" ] ],
+    [ "esp32:D13", "btn_k:1.l", "green", [ "v0" ] ],
+    [ "btn_k:2.r", "esp32:3V3", "red", [ "v0" ] ],
+    [ "esp32:D36", "ldr:OUT", "yellow", [ "h0" ] ],
+    [ "ldr:VCC", "esp32:3V3", "red", [ "h-10", "v80" ] ],
+    [ "ldr:GND", "esp32:GND.2", "black", [ "h-20", "v100" ] ],
+    [ "esp32:D27", "relay:IN", "orange", [ "h30", "v40" ] ],
+    [ "relay:VCC", "esp32:3V3", "red", [ "h-40", "v-20" ] ],
+    [ "relay:GND", "esp32:GND.2", "black", [ "h-50", "v0" ] ],
+    [ "esp32:D2", "r1:1", "blue", [ "h20", "v120" ] ],
+    [ "r1:2", "led:A", "blue", [] ],
+    [ "led:C", "esp32:GND.2", "black", [ "h-10", "v40" ] ],
+    [ "esp32:D21", "lcd:SDA", "purple", [ "h50", "v200" ] ],
+    [ "esp32:D22", "lcd:SCL", "gray", [ "h60", "v210" ] ],
+    [ "lcd:VCC", "esp32:3V3", "red", [ "h-80", "v-100" ] ],
+    [ "lcd:GND", "esp32:GND.2", "black", [ "h-70", "v-80" ] ]
+  ],
+  "dependencies": {}
+}
