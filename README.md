@@ -124,16 +124,6 @@ graph TB
 
 ![Circuito FarmTech](circuit-lcd.png)
 
-### ⚡ Especificações Técnicas
-
-- **Tensão de operação**: 3.3V/5V
-- **Consumo**: ~200mA em operação normal
-- **Frequência de leitura**: 1 segundo
-- **Precisão do ADC**: 12 bits (0-4095)
-- **Conectividade**: Serial USB para monitoramento
-
----
-
 ## 🚀 Instalação
 
 ### 📋 Pré-requisitos
@@ -444,3 +434,6 @@ Este projeto foi desenvolvido para fins educacionais como parte do curso da **FI
 [![FIAP](https://img.shields.io/badge/FIAP-Fase%204-red?style=for-the-badge)](https://fiap.com.br/)
 
 </div>
+
+**VIDEO**
+https://youtu.be/-QfYdURp8Kk
