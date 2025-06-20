@@ -122,7 +122,7 @@ graph TB
 
 ### 🔌 Diagrama do Circuito
 
-![Circuito FarmTech](circuit.png)
+![Circuito FarmTech](circuit-lcd.png)
 
 ### ⚡ Especificações Técnicas
 
