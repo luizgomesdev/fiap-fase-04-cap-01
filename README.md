@@ -38,6 +38,10 @@
 
 O **FarmTech Solutions** é um sistema de irrigação inteligente desenvolvido para a **Fase 4 da FIAP**. Combina sensores físicos, microcontroladores ESP32, Machine Learning e visualização de dados para criar uma solução completa de agricultura de precisão.
 
+
+**VIDEO**
+https://youtu.be/-QfYdURp8Kk
+
 ### 🎯 Objetivos
 
 - **Monitoramento** em tempo real de umidade, pH e nutrientes do solo
@@ -434,6 +438,3 @@ Este projeto foi desenvolvido para fins educacionais como parte do curso da **FI
 [![FIAP](https://img.shields.io/badge/FIAP-Fase%204-red?style=for-the-badge)](https://fiap.com.br/)
 
 </div>
-
-**VIDEO**
-https://youtu.be/-QfYdURp8Kk
